@@ -17,8 +17,6 @@
 #echo "Deploying source to org"
 #sfdx force:source:deploy --sourcepath force-app --target-org DevHub
 
-echo "Deploying source to org"
-sfdx force:source:convert -r force-app -d testDeploy 
-
-echo "Testing code in org"
-sfdx force:apex:test:run --testlevel RunLocalTests --outputdir test-results --resultformat tap --target-org DevHub
+     sfdx force:source:convert -r force-app -d testDeploy
+     . cleanupDeploy.sh
+     sfdx force:mdapi:deploy -d testDeploy/ -u deploy -w 2
