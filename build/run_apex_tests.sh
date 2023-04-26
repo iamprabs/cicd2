@@ -11,11 +11,11 @@
 #echo "Coverting source to metadata format"
 #sfdx force:source:convert -d test_code -r force-app
 
-#echo "Deploying code to org"
-#sfdx force:mdapi:deploy --checkonly -u DevHub -d test_code/ -w -1 -l RunLocalTests
+echo "Deploying code to org"
+sfdx force:mdapi:deploy --checkonly -u DevHub -d test_code/ -w -1 -l RunLocalTests
 
-echo "Deploying source to org"
-sfdx force:source:deploy --sourcepath force-app --target-org DevHub
+#echo "Deploying source to org"
+#sfdx force:source:deploy --sourcepath force-app --target-org DevHub
 
 echo "Testing code in org"
 sfdx force:apex:test:run --testlevel RunLocalTests --outputdir test-results --resultformat tap --target-org DevHub
