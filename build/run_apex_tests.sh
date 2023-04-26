@@ -18,4 +18,4 @@
 #sfdx force:source:deploy --sourcepath force-app --target-org DevHub
 
      sfdx force:source:convert -r force-app -d testDeploy
-     sfdx force:mdapi:deploy -d testDeploy/ -u deploy -w 2
+     sfdx force:mdapi:deploy -d testDeploy/ --target-org deploy -w 2
