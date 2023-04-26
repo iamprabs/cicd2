@@ -18,5 +18,4 @@
 #sfdx force:source:deploy --sourcepath force-app --target-org DevHub
 
      sfdx force:source:convert -r force-app -d testDeploy
-     . cleanupDeploy.sh
      sfdx force:mdapi:deploy -d testDeploy/ -u deploy -w 2
