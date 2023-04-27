@@ -8,7 +8,7 @@ echo "Creating scratch org"
 sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s
 
 echo "Deploying metadata to scratch org"
-sfdx force:source:deploy --sourcepath force-app/main/default --targetusername scratch-org --wait 10
+sfdx force:source:deploy --sourcepath force-app/main/default --target-org scratch-org --wait 10
 
 echo "Running Apex tests"
 sfdx force:apex:test:run -u scratch-org -w 5
