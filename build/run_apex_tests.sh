@@ -2,7 +2,7 @@ set -eo pipefail
 
 echo "Authenticating with Salesforce CLI"
 echo $SALESFORCE_JWT_KEY > jwt.key
-sfdx force:auth:jwt:grant --clientid $APP_KEY --jwtkeyfile keys/server.key --username $SALESFORCE_USERNAME --setdefaultdevhubusername
+sfdx force:auth:jwt:grant -i $APP_KEY -f keys/server.key --username $SALESFORCE_USERNAME --setdefaultdevhubusername
 
 echo "Creating scratch org"
 sfdx force:org:create -f config/project-scratch-def.json -a scratch-org -s
